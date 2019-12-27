@@ -5,13 +5,6 @@ import eel
 
 eel.init('web')
 
-
-@eel.expose
-def dummy(dummy_param):
-    print("I got a parameter: ", dummy_param)
-    return "string_value", 1, 1.2, True, [1, 2, 3, 4], {"name": "eel"}
-
-
 @eel.expose
 def generate_qr(data):
     img = pyqrcode.create(data)
@@ -22,4 +15,4 @@ def generate_qr(data):
     return "data:image/png;base64, " + encoded
 
 
-eel.start('index.html', size=(1000, 600))
+eel.start('index.html', size=(800, 800))
